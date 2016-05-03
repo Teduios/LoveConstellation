@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  APP
+//
+//  Created by tarena on 16/3/30.
+//  Copyright © 2016年 CK. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define SCREEN_BOUNDS [UIScreen mainScreen].bounds
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define kRGBColor(R,G,B,Alpha) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:Alpha]
+
+#ifdef DEBUG
+    #define MYLog(...)  NSLog(__VA_ARGS__)
+#else
+    #define MYLog(...)
+#endif
+
+#define WK(weakSelf) \
+__weak __typeof(&*self)weakSelf = self;
+
+#define REQUEST_URL @"http://web.juhe.cn:8080/constellation/getAll"
+#define REQUEST_KEY @"1356d918384d5c9f8f77b5c2c16bdce7"
+
+#define MATCHING_KEY @"d1be38ee15b54fe8a8837da3a6943ad7"
+#define MATCHING_URL @"http://api.avatardata.cn/XingZuoPeiDui/Lookup"
+#endif /* PrefixHeader_pch */
